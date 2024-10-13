@@ -107,6 +107,14 @@ variable "environment_variables" {
   default     = []
 }
 
+variable "secrets" {
+  type        = list(object({
+    name : string
+    valueFrom: string
+  }))
+  description = "Lista de secrets do parameter store ou do secrets manager"
+  default     = []
+}
 
 variable "capabilities" {
   type        = list(string)
