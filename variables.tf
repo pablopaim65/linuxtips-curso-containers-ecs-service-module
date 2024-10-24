@@ -255,3 +255,9 @@ variable "efs_volumes" {
   description = "Volumes EFS existentes para serem montados nas tasks do ECS"
   default = []
 }
+
+
+variable "service_discovery_namespace" {
+  description = "Namespace ID do Service Discovery"
+  default     = null
+}
