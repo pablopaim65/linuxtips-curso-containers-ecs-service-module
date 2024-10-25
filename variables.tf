@@ -78,16 +78,6 @@ variable "service_task_count" {
 
 
 
-#variable "ssm_vpc_id" {
-#  type        = string
-#  description = "ID do VPC armazenado no AWS Systems Manager (SSM) onde o serviço será implantado."
-#}
-
-
-variable "ssm_listener" {
-  type        = string
-  description = "ARN do listener de um Application Load Balancer (ALB), armazenado no AWS SSM, que será usado pelo serviço."
-}
 variable "service_hosts" {
   type        = list(string)
   description = "Lista de hosts associados ao serviço, geralmente especificados para configurações DNS."
