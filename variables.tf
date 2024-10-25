@@ -84,6 +84,10 @@ variable "ssm_vpc_id" {
 }
 
 
+variable "ssm_listener" {
+  type        = string
+  description = "ARN do listener de um Application Load Balancer (ALB), armazenado no AWS SSM, que será usado pelo serviço."
+}
 variable "service_hosts" {
   type        = list(string)
   description = "Lista de hosts associados ao serviço, geralmente especificados para configurações DNS."
