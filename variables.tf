@@ -43,16 +43,15 @@ variable "service_memory" {
   description = "Quantidade de memória alocada para o serviço, especificada em MB."
 }
 
+variable "service_listener" {
+  type        = string
+  description = "ARN do listener do Application Load Balancer que será usado pelo serviço."
+}
 
 variable "service_task_execution_role" {
   type        = string
   description = "ARN da role de execução de tarefas do ECS que o serviço usará para executar."
 }
-
-#variable "service_launch_type" {
-#  type        = string
-#  description = "ARN do listener do Application Load Balancer que será usado pelo serviço."
-#}
 
 variable "service_launch_type" {
   description = "Configuração dos Launch Types pelos capacity providers disponíveis no cluster"
@@ -66,17 +65,10 @@ variable "service_launch_type" {
   }]
 }
 
-variable "service_listener" {
-  type        = string
-  description = "ARN do listener do Application Load Balancer que será usado pelo serviço."
-}
-
 variable "service_task_count" {
   type        = number
   description = "Número de instâncias da tarefa a serem executadas simultaneamente no serviço."
 }
-
-
 
 variable "service_hosts" {
   type        = list(string)
@@ -89,9 +81,9 @@ variable "service_healthcheck" {
 }
 
 variable "environment_variables" {
-  type = list(object({
+  type        = list(object({
     name : string
-    value : string
+    value: string
   }))
   description = "Lista de variáveis de ambiente que serão passadas para o serviço."
   default     = []
@@ -233,7 +225,6 @@ variable "scale_tracking_requests" {
   default     = 0
 }
 
-
 variable "efs_volumes" {
   type = list(object({
     volume_name : string
@@ -244,10 +235,4 @@ variable "efs_volumes" {
   }))
   description = "Volumes EFS existentes para serem montados nas tasks do ECS"
   default = []
-}
-
-
-variable "service_discovery_namespace" {
-  description = "Namespace ID do Service Discovery"
-  default     = null
 }
