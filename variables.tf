@@ -65,6 +65,28 @@ variable "service_launch_type" {
   }]
 }
 
+variable "service_listener" {                                                             |  -----------------------------------------------------------------------------------------
+    type        = string                                                                    |  -----------------------------------------------------------------------------------------
+    description = "ARN do listener do Application Load Balancer que será usado pelo serviço.|  -----------------------------------------------------------------------------------------
+  }                                                                                         |  -----------------------------------------------------------------------------------------
+                                                                                            |  -----------------------------------------------------------------------------------------
+  variable "service_task_count" {                                                           |  variable "service_task_count" {
+    type        = number                                                                    |    type        = number
+    description = "Número de instâncias da tarefa a serem executadas simultaneamente no serv|    description = "Número de instâncias da tarefa a serem executadas simultaneamente no ser
+  }                                                                                         |  }
+                                                                                            |  
+                                                                                            |  -----------------------------------------------------------------------------------------
+                                                                                            |  -----------------------------------------------------------------------------------------
+  variable "ssm_vpc_id" {                                                                   |  -----------------------------------------------------------------------------------------
+    type        = string                                                                    |  -----------------------------------------------------------------------------------------
+    description = "ID do VPC armazenado no AWS Systems Manager (SSM) onde o serviço será imp|  -----------------------------------------------------------------------------------------
+  }                                                                                         |  -----------------------------------------------------------------------------------------
+                                                                                            |  -----------------------------------------------------------------------------------------
+  variable "ssm_listener" {                                                                 |  -----------------------------------------------------------------------------------------
+    type        = string                                                                    |  -----------------------------------------------------------------------------------------
+    description = "ARN do listener de um Application Load Balancer (ALB), armazenado no AWS |  -----------------------------------------------------------------------------------------
+  }                         
+
 variable "service_task_count" {
   type        = number
   description = "Número de instâncias da tarefa a serem executadas simultaneamente no serviço."
