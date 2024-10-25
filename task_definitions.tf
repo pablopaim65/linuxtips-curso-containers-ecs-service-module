@@ -25,12 +25,10 @@ resource "aws_ecs_task_definition" "main" {
     }
   }
 
-
   container_definitions = jsonencode([
     {
-      name  = var.service_name
-#      image = format("%s:latest", aws_ecr_repository.main.repository_url)
-      image = var.container_image 
+      name   = var.service_name
+      image  = var.container_image
       cpu    = var.service_cpu
       memory = var.service_memory
 
@@ -43,7 +41,6 @@ resource "aws_ecs_task_definition" "main" {
           protocol      = "tcp"
         }
       ]
-
 
       logConfiguration = {
         logDriver = "awslogs"
@@ -64,8 +61,7 @@ resource "aws_ecs_task_definition" "main" {
 
       environment = var.environment_variables
 
-      secrets     = var.secrets
-
+      secrets = var.secrets
     }
   ])
 
