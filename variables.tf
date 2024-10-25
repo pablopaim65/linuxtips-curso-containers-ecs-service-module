@@ -78,10 +78,10 @@ variable "service_task_count" {
 
 
 
-variable "ssm_vpc_id" {
-  type        = string
-  description = "ID do VPC armazenado no AWS Systems Manager (SSM) onde o serviço será implantado."
-}
+#variable "ssm_vpc_id" {
+#  type        = string
+#  description = "ID do VPC armazenado no AWS Systems Manager (SSM) onde o serviço será implantado."
+#}
 
 
 variable "ssm_listener" {
