@@ -31,6 +31,7 @@ resource "aws_ecs_service" "main" {
     }
   }
 
+
   dynamic "service_connect_configuration" {
     for_each = var.use_service_connect ? [var.service_connect_name] : []
 
