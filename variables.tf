@@ -35,7 +35,7 @@ variable "service_port" {
 
 variable "use_lb" {
   type    = bool
-  default = true
+  default = false
   description = "Habilita a exposição do serviço via load balancer"
 }
 
@@ -76,7 +76,7 @@ variable "service_memory" {
 
 variable "service_listener" {
   type        = string
-  default     = null
+#  default     = null
   description = "ARN do listener do Application Load Balancer que será usado pelo serviço."
 }
 
