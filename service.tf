@@ -31,7 +31,6 @@ resource "aws_ecs_service" "main" {
     }
   }
 
-
   dynamic "service_connect_configuration" {
     for_each = var.use_service_connect ? [var.service_connect_name] : []
 
@@ -68,7 +67,6 @@ resource "aws_ecs_service" "main" {
     subnets          = var.private_subnets
     assign_public_ip = false
   }
-
 
   load_balancer {
     target_group_arn = aws_alb_target_group.main.arn

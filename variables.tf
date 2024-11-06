@@ -33,36 +33,36 @@ variable "service_port" {
   description = "Porta na qual o serviço estará acessível."
 }
 
+
+#variable "use_lb" {
+#  type    = bool
+#  default = true
+#  description = "Habilita a exposição do serviço via load balancer"
+#}
+
 variable "service_protocol" {
-  description = "Protocolo de serviço utilizado, como http, https, grpc ou tcp."
-  type        = string
-  default     = null
+  type    = string
+  default = null
 }
 
 variable "protocol" {
-  description = "Protocolo a ser usado nas comunicações, como tcp ou udp."
-  type        = string
-  default     = "tcp"
+  type    = string
+  default = "tcp"
 }
 
 variable "use_service_connect" {
-  description = "Habilita ou desabilita o uso do Service Connect."
-  type        = bool
-  default     = false
+  type    = bool
+  default = false
 }
 
-
-
 variable "service_connect_name" {
-  description = "Nome do Service Connect."
-  type        = string
-  default     = null
+  type    = string
+  default = null
 }
 
 variable "service_connect_arn" {
-  description = "ARN do Service Connect."
-  type        = string
-  default     = null
+  type    = string
+  default = null
 }
 
 variable "service_cpu" {
