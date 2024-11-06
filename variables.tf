@@ -34,11 +34,11 @@ variable "service_port" {
 }
 
 
-#variable "use_lb" {
-#  type    = bool
-#  default = true
-#  description = "Habilita a exposição do serviço via load balancer"
-#}
+variable "use_lb" {
+  type    = bool
+  default = true
+  description = "Habilita a exposição do serviço via load balancer"
+}
 
 variable "service_protocol" {
   type    = string
