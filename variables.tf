@@ -35,8 +35,8 @@ variable "service_port" {
 
 
 variable "use_lb" {
-  type    = bool
-  default = true
+  type        = bool
+  default     = true
   description = "Habilita a exposição do serviço via load balancer"
 }
 
@@ -271,5 +271,5 @@ variable "efs_volumes" {
 
 variable "service_discovery_namespace" {
   description = "Namespace ID do Service Discovery"
-  default = null
+  default     = null
 }
